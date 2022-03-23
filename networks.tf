@@ -20,3 +20,9 @@ resource "aws_vpc" "vpc_worker" {
 resource "aws_internet_gateway" "igw" {
     vpc_id = aws_vpc.vpc_master.id
 }
+
+# Get all available AZs in VPC for its region
+resource "aws_availability_zones" "azs" {
+    state = "available"  
+}
+
